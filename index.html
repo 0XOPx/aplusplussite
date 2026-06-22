@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A++ — A modern, multi-paradigm programming language that transpiles to C++, Python, C#, and JavaScript." />
+  <title>A++ Programming Language</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ── NAVBAR ──────────────────────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-box">A++</div>
+      <span>A<span class="accent">++</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#targets">Targets</a>
+      <a href="#examples">Examples</a>
+      <a href="#install">Install</a>
+    </div>
+    <div class="nav-actions">
+      <a href="https://github.com/0XOPx/aplusplus" target="_blank" class="btn btn-secondary">GitHub</a>
+      <a href="#install" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="container hero-grid">
+
+    <div class="hero-left">
+      <div class="badge badge-purple">
+        <span class="dot">●</span> v0.1.0 — Now Available
+      </div>
+      <h1>Code once.<br><span class="gradient-text">Run anywhere.</span></h1>
+      <p class="hero-sub">
+        A++ is a modern, expressive programming language that transpiles to
+        <strong>C++</strong>, <strong>Python</strong>, <strong>C#</strong>, and <strong>JavaScript</strong>.
+        Write clean code — target any platform.
+      </p>
+      <div class="hero-actions">
+        <a href="#install" class="btn btn-primary btn-lg"> Download A++</a>
+        <a href="#examples" class="btn btn-secondary btn-lg">View Examples</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>Multi-target</strong><span>C++, Python, C#, JS</span></div>
+        <div><strong>Open Source</strong><span>MIT Licensed</span></div>
+        <div><strong>Fast</strong><span>Native performance</span></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="code-window">
+        <div class="window-bar">
+          <div class="traffic-lights">
+            <span class="tl red"></span>
+            <span class="tl yellow"></span>
+            <span class="tl green"></span>
+          </div>
+          <div class="window-tabs" id="heroTabs">
+            <button class="tab active" data-tab="hello">hello.app</button>
+            <button class="tab" data-tab="fibonacci">fibonacci.app</button>
+            <button class="tab" data-tab="classes">classes.app</button>
+          </div>
+        </div>
+        <div class="code-body" id="heroCode"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FEATURES ────────────────────────────────────────────────────────────── -->
+<section id="features" class="section bg-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Why A++</div>
+      <h2>Everything you need<br><span class="gradient-text">in one language</span></h2>
+      <p class="section-sub">A++ brings together the best ideas from modern language design into one clean, powerful toolchain.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feat-icon"></div>
+        <h3>Multi-Target Compilation</h3>
+        <p>Write once, compile to C++, Python, C#, or JavaScript. One language, every platform.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"></div>
+        <h3>Fast &amp; Lightweight</h3>
+        <p>Minimal overhead interpreter with an optimizing compiler. Your code runs at native speed.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"></div>
+        <h3>Static Typing</h3>
+        <p>Optional type annotations with full type inference. Catch bugs at compile time, not runtime.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"></div>
+        <h3>Rich Standard Library</h3>
+        <p>Built-in math, string, list, map, I/O, and file utilities. Everything you need, out of the box.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"></div>
+        <h3>Multi-Paradigm</h3>
+        <p>Object-oriented, functional, and procedural styles all supported. Code your way.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"></div>
+        <h3>Built-in Debugger</h3>
+        <p>Integrated debugger with breakpoints, step-through execution, and AST inspection.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"></div>
+        <h3>Constant Folding</h3>
+        <p>Smart optimizer eliminates dead code and folds constants at compile time automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">📝</div>
+        <h3>Clean Syntax</h3>
+        <p>Familiar, readable syntax inspired by the best of Rust, Swift, and Kotlin. Easy to learn.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">💬</div>
+        <h3>Interactive REPL</h3>
+        <p>Jump straight into code with the built-in REPL. Experiment and prototype instantly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TARGETS ─────────────────────────────────────────────────────────────── -->
+<section id="targets" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Compilation Targets</div>
+      <h2>Write A++.<br><span class="gradient-text">Deploy everywhere.</span></h2>
+      <p class="section-sub">One source file. Four targets. Pick your runtime and let A++ handle the translation.</p>
+    </div>
+
+    <div class="target-tabs" id="targetTabs">
+      <button class="target-tab active" data-target="cpp">⚙️ C++</button>
+      <button class="target-tab" data-target="python">🐍 Python</button>
+      <button class="target-tab" data-target="csharp">💜 C#</button>
+      <button class="target-tab" data-target="js">🌐 JavaScript</button>
+    </div>
+
+    <div class="target-content">
+      <div class="target-info" id="targetInfo"></div>
+      <div class="code-window target-code-window" id="targetCodeWindow">
+        <div class="window-bar">
+          <div class="traffic-lights">
+            <span class="tl red"></span><span class="tl yellow"></span><span class="tl green"></span>
+          </div>
+          <span class="window-filename" id="targetFilename">output.cpp</span>
+        </div>
+        <div class="code-body" id="targetCode"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXAMPLES ────────────────────────────────────────────────────────────── -->
+<section id="examples" class="section bg-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Code Examples</div>
+      <h2>See A++ in action</h2>
+      <p class="section-sub">Real programs, real syntax. Browse examples and see how expressive A++ code can be.</p>
+    </div>
+    <div class="examples-layout">
+      <div class="examples-sidebar" id="examplesSidebar"></div>
+      <div class="code-window examples-code-window">
+        <div class="window-bar">
+          <div class="traffic-lights">
+            <span class="tl red"></span><span class="tl yellow"></span><span class="tl green"></span>
+          </div>
+          <span class="window-filename" id="exampleFilename">hello.app</span>
+          <span class="badge badge-purple" style="margin-left:auto;font-size:11px;">A++</span>
+        </div>
+        <div class="code-body" id="exampleCode"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INSTALL ─────────────────────────────────────────────────────────────── -->
+<section id="install" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Get Started</div>
+      <h2>Install A++ in<br><span class="gradient-text">under 2 minutes</span></h2>
+      <p class="section-sub">A++ is open source and easy to build from source. Requires C++17 and CMake 3.16+.</p>
+    </div>
+
+    <div class="platform-tabs" id="platformTabs">
+      <button class="platform-tab active" data-platform="linux">🐧 Linux</button>
+      <button class="platform-tab" data-platform="mac">🍎 macOS</button>
+      <button class="platform-tab" data-platform="win">🪟 Windows</button>
+    </div>
+
+    <div class="install-steps" id="installSteps"></div>
+
+    <div class="quickref">
+      <h3>Quick Reference</h3>
+      <div class="quickref-grid" id="quickrefGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:14px;">
+          <div class="logo-box">A++</div>
+          <span>A<span class="accent">++</span></span>
+        </div>
+        <p>A modern, multi-paradigm programming language that compiles to C++, Python, C#, and JavaScript.</p>
+        <div class="footer-badges">
+          <span class="badge badge-green">MIT</span>
+          <span class="badge badge-purple">v0.1.0</span>
+          <span class="badge badge-blue">Open Source</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Language</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#targets">Targets</a></li>
+          <li><a href="#examples">Examples</a></li>
+          <li><a href="#">Syntax Guide</a></li>
+          <li><a href="#">Standard Library</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="#">Compiler</a></li>
+          <li><a href="#">Interpreter</a></li>
+          <li><a href="#">Debugger</a></li>
+          <li><a href="#">Optimizer</a></li>
+          <li><a href="#">REPL</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/0XOPx/aplusplus" target="_blank">GitHub</a></li>
+          <li><a href="#">Contributing</a></li>
+          <li><a href="#">Changelog</a></li>
+          <li><a href="#">License (MIT)</a></li>
+          <li><a href="#">Report a Bug</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> A++ Language · Built by <span class="accent">0XOPx</span> and contributors · MIT License</p>
+      <p class="mono">app --version: <span class="accent">0.1.0</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
