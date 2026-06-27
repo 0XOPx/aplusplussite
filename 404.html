@@ -1,20 +1,76 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>404 Not Found</title>
+<title id="error-title">404 Not Found</title>
 <style>
 body{background:white;color:black;font-family:"Times New Roman",serif;margin:40px;}
 hr{border:1px solid black;}
 </style>
 </head>
 <body>
-<h1>Not Found</h1>
+<h1 id="error-h1">Not Found</h1>
 <hr>
-<p>The requested URL was not found on this server.</p>
-<p>Additionally a 404 Not Found error was encountered while trying to use an ErrorDocument to handle the request.</p>
+<p id="error-desc">The requested URL was not found on this server.</p>
+<p id="error-subdesc">Additionally, a 404 Not Found error was encountered while trying to use an ErrorDocument to handle the request.</p>
 <hr>
 <p style="font-size:12px;color:#555;">nginx/1.14.0 (Ubuntu)</p>
+
+<script>
+  const errorMap = {
+    "400": {
+      title: "400 Bad Request",
+      h1: "Bad Request",
+      desc: "Your browser sent a request that this server could not understand."
+    },
+    "401": {
+      title: "401 Unauthorized",
+      h1: "Unauthorized",
+      desc: "This server could not verify that you are authorized to access the document requested."
+    },
+    "403": {
+      title: "403 Forbidden",
+      h1: "Forbidden",
+      desc: "You don't have permission to access this resource on this server."
+    },
+    "404": {
+      title: "404 Not Found",
+      h1: "Not Found",
+      desc: "The requested URL was not found on this server."
+    },
+    "500": {
+      title: "500 Internal Server Error",
+      h1: "Internal Server Error",
+      desc: "The server encountered an internal error or misconfiguration and was unable to complete your request."
+    },
+    "502": {
+      title: "502 Bad Gateway",
+      h1: "Bad Gateway",
+      desc: "The proxy server received an invalid response from an upstream server."
+    },
+    "503": {
+      title: "503 Service Unavailable",
+      h1: "Service Unavailable",
+      desc: "The server is temporarily unable to service your request due to maintenance downtime or capacity problems."
+    },
+    "504": {
+      title: "504 Gateway Timeout",
+      h1: "Gateway Timeout",
+      desc: "The gateway server did not receive a timely response from the upstream server."
+    }
+  };
+
+  const currentPath = window.location.pathname;
+  
+  const codeMatch = currentPath.match(/\b(400|401|403|404|500|502|503|504)\b/);
+  const activeCode = codeMatch ? codeMatch[1] : "404";
+
+  if (errorMap[activeCode]) {
+    document.getElementById('error-title').innerText = errorMap[activeCode].title;
+    document.getElementById('error-h1').innerText = errorMap[activeCode].h1;
+    document.getElementById('error-desc').innerText = errorMap[activeCode].desc;
+    document.getElementById('error-subdesc').innerText = `Additionally, a ${errorMap[activeCode].title} error was encountered while trying to use an ErrorDocument to handle the request.`;
+  }
+</script>
 </body>
 </html>
